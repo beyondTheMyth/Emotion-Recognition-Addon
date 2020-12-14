@@ -1,4 +1,4 @@
-from .features import import_dataset
+from features import import_dataset
 import_dataset()
 # face_cascade = cv.CascadeClassifier()
 

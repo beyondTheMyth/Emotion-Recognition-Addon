@@ -1,0 +1,6 @@
+dataset/
+haar/
+*.jpg
+*.txt
+**/__pycache__/**
+trolas.py

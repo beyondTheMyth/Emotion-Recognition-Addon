@@ -29,21 +29,22 @@ def import_dataset():
                     # minNeighbors=1,
                     # flags=cv.CASCADE_SCALE_IMAGE
                 # )
-                for x, y, w, h in face:
-                    face_roi = image_array[y:y + h, x: x + h]
-                    cropped_face = cv.resize(face_roi, (w, h), interpolation=cv.INTER_AREA)
+                if is_training_set:
+                    for x, y, w, h in face:
+                        face_roi = image_array[y:y + h, x: x + w]
+                        cropped_face = cv.resize(face_roi, (h, w), interpolation=cv.INTER_AREA)
 
-                    eyes = eye_classifier.detectMultiScale(cropped_face, 1.05, 3)
-                    for ex, ey, ew, eh in eyes:
-                        eye_roi = face_roi[ex:ex + ew, ey:ey + eh]
-                        cropped_eye = cv.resize(eye_roi, (ew, eh), interpolation=cv.INTER_AREA)
+                        eyes = eye_classifier.detectMultiScale(cropped_face, 1.05, 3)
+                        for ex, ey, ew, eh in eyes:
+                            eye_roi = face_roi[ey: ey + eh, ex: ex + ew]
+                            cropped_eye = cv.resize(eye_roi, (eh, ew), interpolation=cv.INTER_AREA)
 
-                        k += 1
-                        if k == 4:
-                            cv.imshow('image', cropped_eye)
-                            cv.waitKey(100)
-                        if len(face) != 0:
-                            j += 1
+                            k += 1
+                            if k == 4:
+                                cv.imshow('image', cropped_eye)
+                                cv.waitKey(100)
+                            if len(face) != 0:
+                                j += 1
 
 
 

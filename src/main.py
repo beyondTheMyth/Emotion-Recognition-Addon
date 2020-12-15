@@ -1,5 +1,5 @@
-from features import import_dataset
-import_dataset()
+import features
+features.import_dataset()
 # face_cascade = cv.CascadeClassifier()
 
 # k = ord('p')

@@ -1,8 +1,5 @@
-import features
-features.import_dataset()
-# face_cascade = cv.CascadeClassifier()
+from emotionrecognitionapp import EmotionRecognitionApp
 
-# k = ord('p')
-# while k != ord('q'):
-#     k = cv.waitKey(0)
+app = EmotionRecognitionApp('/home/klis/Documents/team_pr/config.json')
+app.run(4)
 

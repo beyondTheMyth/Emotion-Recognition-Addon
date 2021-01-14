@@ -1,6 +1,10 @@
 dataset/
+datasetb/
+outputfaces/
 haar/
 *.jpg
 *.txt
+*.png
+*.pkl
 **/__pycache__/**
 trolas.py

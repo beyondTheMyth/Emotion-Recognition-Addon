@@ -1,4 +1,4 @@
-__module_name__ = "ax_eva"
+__module_name__ = "emotionsend"
 __module_version__ = "0.1.0"
 __module_description__ = "Some script description"
  
@@ -11,7 +11,7 @@ last_id = -1
 string = ''
 while True:
     try:    
-        with open("/home/klis/Documents/team_pr/emotion.data", "r") as infile:
+        with open("pathtoemotiondata/emotion.data", "r") as infile:
             string = infile.read()
     except IOError:
         pass
